@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> <!--jika ingin kakulatorya berfungsi harus ada function dan onchange-->
+<head>
+<style type="text/css">
+	body {background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRi7pg7YQ0XJbjFS6VzhFQgCGTtI8XkAe_f3CbsL5YfC4J-Khua');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;color:white;
+  font-family:"courier new";
+  font-size:16px;}
+  </style>
+	<title>javascript</title>
+
+</head>
+<body>
+	<h2>Simple Caculator</h2>
+	<p> <input type="number" id="value1" onchange="setValue1(this.value)"></p>
+<p> <input type="number" id="value2" onchange="setValue2(this.value)"></p>
+
+<p>
+	<button id="add"> + </button>
+	<button id="sub"> -</button>
+	<button id="mult"> x </button>
+	<button id="div"> : </button> 
+	<button id="pangkat"> ^ </button>
+	<button id="mod"> mod </button>
+</p>
+<script>
+	var value1 = +document.getElementById("value1").value;
+	var value2 = +document.getElementById("value2").value; /* tanda (+) berfungsi untuk merubah nilai elemennya menjadi numerik, sehingga 10+5 di jumlahkan menjadi 15.*/
+
+	function setValue1(val){value1=+val;} /*funcition berguna agar kakulator bisa berfungsi */ 
+	function setValue2(val){value2=+val;}
+
+	document.getElementById("add").onclick=function (){var result=value1+value2;alert(result);}
+document.getElementById("sub").onclick=function (){var result=value1-value2;alert(result);}
+document.getElementById("mult").onclick=function (){var result=value1*value2;alert(result);}
+document.getElementById("div").onclick=function (){var result=value1/value2;alert(result);}
+document.getElementById("pangkat").onclick=function(){var result=value1*value1;alert(result);} /*untuk pangkat harus pakai value1*value1 karena pangkat mengkalikan nilai itu sendiri*/
+document.getElementById("mod").onclick=function(){var result=value1%value2;alert(result);} /*untuk modulus tandanya memakai % */
+
+
+
+</script>
+
+
+</body>
+</html>
